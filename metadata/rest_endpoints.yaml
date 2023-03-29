@@ -1,0 +1,18 @@
+- comment: ""
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Romms
+  methods:
+    - GET
+  name: Romms
+  url: rooms
+- comment: ""
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: RoomsReservation
+  methods:
+    - GET
+  name: RoomsReservation
+  url: rooms/reservation

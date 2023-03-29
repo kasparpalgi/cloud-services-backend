@@ -1,0 +1,24 @@
+- name: allowed-queries
+  definition:
+    queries:
+      - name: RoomsReservation
+        query: |
+          query RoomsReservation {
+            rooms {
+              id
+              name
+              reservations {
+                date
+                length_minutes
+                time
+              }
+            }
+          }
+      - name: Romms
+        query: |
+          query MyQuery {
+            rooms {
+              id
+              name
+            }
+          }

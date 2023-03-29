@@ -1,0 +1,24 @@
+table:
+  name: invoices
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+event_triggers:
+  - name: new_invoice
+    definition:
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns:
+          - company_id
+          - date
+          - total
+          - status
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: https://workflow.crewnew.com/webhook-test/new-invoice
