@@ -1,7 +1,0 @@
-version: 3
-endpoint: https://cloud-services.hasura.app
-admin_secret: wIwO9JgznnaqmN4rAoc9fTUvJifxj8iOuh8Uec5anaclbtupTIfrGG7z7gQoZEJ1
-metadata_directory: metadata
-actions:
-  kind: synchronous
-  handler_webhook_baseurl: http://localhost:3000
