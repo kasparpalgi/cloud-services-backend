@@ -1,0 +1,1 @@
+alter table "public"."users" add constraint "email" check (char_length(email) >= 5 AND char_length(email) <= 255 AND position('@' in email) > 1 AND position('.' in substring(email from position('@' in email) for 255)) > 1);
