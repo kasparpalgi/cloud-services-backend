@@ -1,8 +1,26 @@
-actions: []
+actions:
+  - name: openweather_current
+    definition:
+      kind: ""
+      handler: https://api.openweathermap.org/data/2.5
+      request_transform:
+        method: GET
+        query_params:
+          appid: 6f9b90af3984a34c3b2c412d4b84aefe
+          q: '{{$body.input.location}}'
+        request_headers:
+          add_headers: {}
+          remove_headers:
+            - content-type
+        template_engine: Kriti
+        url: '{{$base_url}}/weather'
+        version: 2
+    permissions:
+      - role: public
 custom_types:
   enums: []
-  input_objects:
-    - name: SampleInput
+  input_objects: []
   objects:
-    - name: SampleOutput
-  scalars: []
+    - name: OpenWeatherOutputType
+  scalars:
+    - name: jsonb
