@@ -7,3 +7,12 @@
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include default/tables/tables.yaml"
+- name: crm
+  kind: mysql8
+  configuration:
+    template: null
+    timeout: null
+    value:
+      fully_qualify_all_names: false
+      jdbc_url: jdbc:mysql://213.168.251.122:3306/estoniac_crm?user=estoniac_crm&password=Asdc1523!Asdc1523!
+  tables: "!include crm/tables/tables.yaml"
