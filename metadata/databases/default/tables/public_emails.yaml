@@ -1,0 +1,3 @@
+table:
+  name: emails
+  schema: public

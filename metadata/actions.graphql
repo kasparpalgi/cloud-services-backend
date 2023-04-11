@@ -4,6 +4,12 @@ type Query {
   ): OpenWeatherOutputType
 }
 
+type Mutation {
+  sendEmail(
+    email: String!
+  ): emailOutput
+}
+
 type OpenWeatherOutputType {
   coord: jsonb
   weather: jsonb
@@ -18,6 +24,11 @@ type OpenWeatherOutputType {
   id: Int
   name: String
   code: Int
+}
+
+type emailOutput {
+  email_id: Int!
+  success: Boolean!
 }
 
 scalar jsonb

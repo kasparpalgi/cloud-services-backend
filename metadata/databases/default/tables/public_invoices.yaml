@@ -5,6 +5,24 @@ object_relationships:
   - name: company
     using:
       foreign_key_constraint_on: company_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+select_permissions:
+  - role: customer
+    permission:
+      columns:
+        - company_id
+        - created_at
+        - date
+        - id
+        - status
+        - amount
+      filter:
+        company:
+          users:
+            id:
+              _eq: X-Hasura-User-Id
 event_triggers:
   - name: new_invoice
     definition:
@@ -15,7 +33,7 @@ event_triggers:
         columns:
           - company_id
           - date
-          - total
+          - amount
           - status
     retry_conf:
       interval_sec: 10

@@ -17,10 +17,28 @@ actions:
         version: 2
     permissions:
       - role: public
+  - name: sendEmail
+    definition:
+      kind: synchronous
+      handler: https://localhost:3000/sendEmail
+    permissions:
+      - role: customer
+      - role: public
+    comment: SendGrid
 custom_types:
   enums: []
   input_objects: []
   objects:
     - name: OpenWeatherOutputType
+    - name: emailOutput
+      relationships:
+        - field_mapping:
+            email_id: id
+          name: sentEmail
+          remote_table:
+            name: emails
+            schema: public
+          source: default
+          type: object
   scalars:
     - name: jsonb

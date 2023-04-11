@@ -8,3 +8,18 @@ object_relationships:
   - name: roleByRole
     using:
       foreign_key_constraint_on: role
+array_relationships:
+  - name: invoices
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: invoices
+          schema: public
+  - name: messages
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: messages
+          schema: public
