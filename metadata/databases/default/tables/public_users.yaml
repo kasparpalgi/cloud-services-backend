@@ -23,3 +23,14 @@ array_relationships:
         table:
           name: messages
           schema: public
+event_triggers:
+  - name: new_user
+    definition:
+      enable_manual: true
+      insert:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: https://slack.crewnew.com/new_user

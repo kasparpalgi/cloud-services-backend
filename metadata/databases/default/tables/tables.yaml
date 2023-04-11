@@ -8,4 +8,5 @@
 - "!include public_reviews.yaml"
 - "!include public_roles.yaml"
 - "!include public_rooms.yaml"
+- "!include public_transfers.yaml"
 - "!include public_users.yaml"
